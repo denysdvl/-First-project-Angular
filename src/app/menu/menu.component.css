@@ -1,0 +1,38 @@
+.menu{
+    justify-content: space-between;
+}
+
+.menu-item{
+    display: inline-block;
+    color: #ffffff;
+    font-size: 14px;
+    line-height: 30px;
+    padding: 0 10px;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+.menu-item:hover{
+    text-decoration: underline;
+}
+.mdmenu{
+    display: none;
+}
+
+
+@media screen and (max-width: 768px) {
+.mdmenu{
+    display: inline-block;
+}
+    .links{
+        position: fixed;
+        display: block;
+        top: 0;
+        right: 0;
+        left: 0;
+        margin-top: 52px;
+        background-color: rgba(253, 253, 253, 0.952);
+        z-index: 1000;
+        overflow: auto;
+        opacity: 0;
+    }
+}
