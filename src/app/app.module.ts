@@ -8,13 +8,15 @@ import { MenuComponent } from './menu/menu.component';
 import { KontentComponent } from './kontent/kontent.component';
 import { TabDogsComponent } from './tab-dogs/tab-dogs.component';
 import { ChatComponent } from './chat/chat.component';
+import { NotifListComponent } from './notif-list/notif-list.component';
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
     KontentComponent,
     TabDogsComponent,
-    ChatComponent
+    ChatComponent,
+    NotifListComponent
   ],
   imports: [
     BrowserModule,

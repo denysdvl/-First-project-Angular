@@ -17,13 +17,15 @@
 .mdmenu{
     display: none;
 }
-
+.left_menu button{
+    margin-right: 8px;
+}
 
 @media screen and (max-width: 768px) {
 .mdmenu{
     display: inline-block;
 }
-    .links{
+    .left_menu{
         position: fixed;
         display: block;
         top: 0;

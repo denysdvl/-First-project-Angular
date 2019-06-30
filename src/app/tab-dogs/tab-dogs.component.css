@@ -8,9 +8,7 @@
   mat-card-header{
       padding-bottom: 10px; 
   }
-  .img{
-    height: 250px;
-  }
+  
   @media screen and (max-width: 926px){
       .card{
           display: block;
