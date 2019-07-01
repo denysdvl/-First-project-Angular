@@ -1,20 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Injectable } from '@angular/core';
+import { SmsService } from "../shared/content.service"
 
 @Component({
   selector: 'app-notif-list',
   templateUrl: './notif-list.component.html',
   styleUrls: ['./notif-list.component.css']
 })
-export class NotifListComponent implements OnInit {
-  notifCart: boolean; 
-  constructor() {
+@Injectable({ providedIn: 'root' })
+export class NotifListComponent implements OnInit{
+  notifCart : boolean;
+  constructor(private smsService: SmsService) {
    this.notifCart = true;
    }
 
   ngOnInit() {
   }
-  Close(){
-    this.notifCart = false;
-    setTimeout(()=>{this.notifCart=true},4000);
+
+  Close(id: number){
+    this.smsService.onClose(id);
   }
+  
 }

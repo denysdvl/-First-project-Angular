@@ -1,4 +1,18 @@
-.example-form {
+.btn-send{
+        position: fixed;
+        z-index: 4;
+        left: 3rem;
+        top: 150px;
+        -webkit-transform: translateX(-50%);
+            -ms-transform: translateX(-50%);
+                transform: translateX(-50%);
+}
+.example-card{
+    margin-bottom: 1rem;
+    margin-right: 80px;
+    margin-left: 60px;
+}
+.dialog-form {
     min-width: 200px;
     max-width: 300px;
         position: fixed;
@@ -12,17 +26,21 @@
     color: #fff;
     padding: 1rem;
     border-radius: 4px;
-    border: 1px solid #fff  
+    border: 1px solid #fff;
  }
   
-  .example-full-width{
+  .dialog-full-width{
     width: 100%;
   }
   
   .btn-send{
       padding-top: 1rem;
+      justify-content: flex-start;
       
   }
    button{
     left: 85%;
+}
+.displanone{
+    display: none;
 }

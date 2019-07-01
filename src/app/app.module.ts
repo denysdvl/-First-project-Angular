@@ -9,6 +9,8 @@ import { KontentComponent } from './kontent/kontent.component';
 import { TabDogsComponent } from './tab-dogs/tab-dogs.component';
 import { ChatComponent } from './chat/chat.component';
 import { NotifListComponent } from './notif-list/notif-list.component';
+import {FormsModule} from '@angular/forms';
+import { LoginComponent } from './login/login.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,12 +18,14 @@ import { NotifListComponent } from './notif-list/notif-list.component';
     KontentComponent,
     TabDogsComponent,
     ChatComponent,
-    NotifListComponent
+    NotifListComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MaterialModule  
+    MaterialModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

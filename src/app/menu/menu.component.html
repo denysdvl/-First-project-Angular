@@ -1,13 +1,18 @@
 <mat-toolbar color="primary" class="menu">
         <button mat-button [matMenuTriggerFor]="menu" class=mdmenu>Menu</button>
         <mat-menu #menu="matMenu">
-          <button mat-menu-item class="menu-item">Home</button>
-          <button mat-menu-item class="menu-item" (click)="OpenChat()">chat</button>
-          <button mat-menu-item class="menu-item">login</button>
+          <button mat-menu-item class="menu-item" (click)="OpenHome()">Home</button>
+          <button mat-menu-item class="menu-item" (click)="OpenChat()">Chat</button>
+          <button mat-menu-item class="menu-item" (click)="OpenLogin()">Login</button>
         </mat-menu>
         <div class="left_menu">
-                <button mat-button >Home</button>
+                <button mat-button  (click)="OpenHome()">Home</button>
                 <button mat-button (click)="OpenChat()">Chat</button>
-                <button mat-button >Login</button>
+                <button mat-button (click)="OpenLogin()">Login</button>
         </div>
 </mat-toolbar>
+<div  [ngSwitch]="current">
+        <app-kontent *ngSwitchCase="1"></app-kontent>
+        <app-login *ngSwitchCase="3"></app-login>
+        <app-chat *ngSwitchCase="2"></app-chat>
+        </div>

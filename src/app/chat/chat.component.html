@@ -1,16 +1,39 @@
-<form class="example-form">
-        <mat-form-field class="example-full-width" floatLabel="auto" 
-        hideRequiredMarker appearance="outline">
-        <mat-label>Name</mat-label>
-          <input matInput required>
-        </mat-form-field>
-      
-        <mat-form-field class="example-full-width">
-          <textarea matInput placeholder="Leave a comment"></textarea>
-        </mat-form-field>
-       <div clas="btn-send" >
-        <button mat-mini-fab aria-label>
-                <mat-icon>send</mat-icon>
-        </button>
-    </div>
-      </form>
+<button mat-raised-button (click)="openDialog()" class="btn-send">Send</button>
+<ol>
+      <mat-card *ngFor="let sms of  smsService.sms; let i = index;"  class="example-card">
+          <mat-card-header>
+             <mat-card-title>{{sms.firstName}}</mat-card-title>
+            </mat-card-header>
+          <hr color="#c2185b">
+          <mat-card-content>
+            <p>
+                  {{sms.myText}}
+            </p>
+          </mat-card-content>
+        </mat-card>
+    
+</ol>
+
+<form class="dialog-form" [class.displanone]="!OpenChat">
+  
+    <button mat-button (click)="onNoClick()"><mat-icon>closes</mat-icon></button>
+  <mat-form-field class="dialog-full-width" floatLabel="auto" 
+  hideRequiredMarker appearance="outline">
+  <mat-label>First name</mat-label>
+    <input matInput required
+    [(ngModel)]="firstName" type="text" name="firstName">
+  </mat-form-field>
+
+  <mat-form-field class="dialog-full-width">
+    <textarea [(ngModel)]="myText" type="text" name="myText"
+     matInput placeholder="Leave a comment"></textarea>
+  </mat-form-field> 
+  
+ <div >
+  <button  clas="btn-send" mat-mini-fab aria-label (click)="sendSms()">
+          <mat-icon>send</mat-icon>
+  </button>
+  
+</div>
+</form>
+

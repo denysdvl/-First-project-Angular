@@ -6,14 +6,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
-  icon: Element;
-  constructor() { 
-    this.icon = document.querySelector(".icon");
-  }
-  ToggelClass(){
-    console.log(this.icon);
-  }
-  ngOnInit() {
+  current: number;
+  constructor() {
+    this.current = 2;
   }
 
+  ngOnInit() {
+  }
+  OpenHome() {
+    this.current = 1;
+  }
+  OpenChat() {
+    this.current = 2;
+  }
+  OpenLogin() {
+    this.current = 3;
+  }
 }

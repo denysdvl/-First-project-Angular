@@ -7,7 +7,8 @@ import {
   MatTabsModule,
   MatButtonToggleModule,
   MatIconModule,
-  MatInputModule
+  MatInputModule,
+  MatDialogModule
 } from '@angular/material';
 
 
@@ -19,7 +20,8 @@ const MaterialComponents = [
   MatTabsModule,
   MatButtonToggleModule,
   MatIconModule,
-  MatInputModule
+  MatInputModule,
+  MatDialogModule
 ];
 
 @NgModule({

@@ -4,6 +4,7 @@ html, body { height: 100%; }
 body {
     background-color:#242226;
     margin: 0;
+    font-size:150%;
 }
 * {
     font-family: 'Raleway';
