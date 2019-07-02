@@ -11,6 +11,8 @@ import { ChatComponent } from './chat/chat.component';
 import { NotifListComponent } from './notif-list/notif-list.component';
 import {FormsModule} from '@angular/forms';
 import { LoginComponent } from './login/login.component';
+import {ReactiveFormsModule} from '@angular/forms';
+import { from } from 'rxjs';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +27,8 @@ import { LoginComponent } from './login/login.component';
     BrowserModule,
     BrowserAnimationsModule,
     MaterialModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

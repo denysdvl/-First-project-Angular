@@ -11,8 +11,8 @@
                 <button mat-button (click)="OpenLogin()">Login</button>
         </div>
 </mat-toolbar>
+<app-login [class.dispnone]="!openLogin" ></app-login>
 <div  [ngSwitch]="current">
         <app-kontent *ngSwitchCase="1"></app-kontent>
-        <app-login *ngSwitchCase="3"></app-login>
         <app-chat *ngSwitchCase="2"></app-chat>
         </div>

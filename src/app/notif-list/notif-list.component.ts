@@ -1,4 +1,4 @@
-import { Component, OnInit, Injectable } from '@angular/core';
+import { Component, Injectable } from '@angular/core';
 import { SmsService } from "../shared/content.service"
 
 @Component({
@@ -7,14 +7,11 @@ import { SmsService } from "../shared/content.service"
   styleUrls: ['./notif-list.component.css']
 })
 @Injectable({ providedIn: 'root' })
-export class NotifListComponent implements OnInit{
+export class NotifListComponent {
   notifCart : boolean;
   constructor(private smsService: SmsService) {
    this.notifCart = true;
    }
-
-  ngOnInit() {
-  }
 
   Close(id: number){
     this.smsService.onClose(id);

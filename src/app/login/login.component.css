@@ -1,0 +1,36 @@
+.dialog-form {
+  width: 500px;
+  position: fixed;
+  z-index: 4;
+  top: 150px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 70%);
+  color: #fff;
+  padding: 1rem;
+  border-radius: 4px;
+  border: 1px solid #fff;
+}
+
+.dialog-full-width {
+  width: 100%;
+  margin-bottom: 20px;
+  padding-top: 1rem;
+
+}
+
+mat-form-field {
+  display: block;
+  height: 90px;
+}
+
+.btn-login {
+  padding-top: 0px;
+  min-width: 500px;
+}
+
+.btn-close {
+  left: 85%;
+}

@@ -1,15 +1,18 @@
-.btn-send{
+.btn-open{
         position: fixed;
+        height: 30px;
         z-index: 4;
-        left: 3rem;
-        top: 150px;
+        top: 100px;
         -webkit-transform: translateX(-50%);
             -ms-transform: translateX(-50%);
                 transform: translateX(-50%);
+                justify-content: flex-start;
+                left: 95%;
 }
 .example-card{
+    top: 1rem;
     margin-bottom: 1rem;
-    margin-right: 80px;
+    margin-right: 120px;
     margin-left: 60px;
 }
 .dialog-form {
@@ -35,12 +38,12 @@
   
   .btn-send{
       padding-top: 1rem;
-      justify-content: flex-start;
-      
-  }
-   button{
-    left: 85%;
-}
+         
+      }
+      .btn-close{
+        left: 85%;  
+      }
+  
 .displanone{
     display: none;
 }

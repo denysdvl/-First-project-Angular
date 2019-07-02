@@ -1,3 +1,26 @@
-<button  clas="btn-send" mat-mini-fab aria-label (click)="sendSms()">
-        <mat-icon>send</mat-icon>
-</button>
+<form class="dialog-form" >
+   <button mat-button class="btn-close" (click)="onClose()"><mat-icon>closes</mat-icon></button>
+   <div class="dialog-full-width">
+      <mat-form-field  floatLabel="auto" 
+      hideRequiredMarker appearance="outline">
+      <mat-label>First name</mat-label>
+        <input matInput required
+        [(ngModel)]="Name" type="text" name="name">
+      </mat-form-field>
+    </div>
+    
+    <div class="dialog-full-width">
+            <mat-form-field  floatLabel="auto" 
+            hideRequiredMarker appearance="outline">
+            <mat-label>Password</mat-label>
+              <input matInput required
+              [(ngModel)]="Pass" type="password" name="passWord">
+            </mat-form-field>
+         
+          </div>
+    
+      <button mat-raised-button class="btn-login" (click)="Login()">
+              <span>Login</span>
+      </button>
+      
+    </form>

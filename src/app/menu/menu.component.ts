@@ -7,8 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
   current: number;
+  openLogin: boolean;
   constructor() {
-    this.current = 2;
+    this.current = 1;
+    this.openLogin = false;
   }
 
   ngOnInit() {
@@ -20,6 +22,6 @@ export class MenuComponent implements OnInit {
     this.current = 2;
   }
   OpenLogin() {
-    this.current = 3;
+    this.openLogin = true;
   }
 }

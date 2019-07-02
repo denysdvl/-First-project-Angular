@@ -1,5 +1,4 @@
-<button mat-raised-button (click)="openDialog()" class="btn-send">Send</button>
-<ol>
+<div><button mat-raised-button (click)="openDialog()" class="btn-open">Send</button></div>
       <mat-card *ngFor="let sms of  smsService.sms; let i = index;"  class="example-card">
           <mat-card-header>
              <mat-card-title>{{sms.firstName}}</mat-card-title>
@@ -12,16 +11,16 @@
           </mat-card-content>
         </mat-card>
     
-</ol>
+
 
 <form class="dialog-form" [class.displanone]="!OpenChat">
   
-    <button mat-button (click)="onNoClick()"><mat-icon>closes</mat-icon></button>
+    <button mat-button (click)="onNoClick()" class="btn-close"><mat-icon>closes</mat-icon></button>
   <mat-form-field class="dialog-full-width" floatLabel="auto" 
   hideRequiredMarker appearance="outline">
   <mat-label>First name</mat-label>
     <input matInput required
-    [(ngModel)]="firstName" type="text" name="firstName">
+    [(ngModel)]="firstName" type="text" name="firstName" [disabled]="onLog">
   </mat-form-field>
 
   <mat-form-field class="dialog-full-width">
@@ -29,11 +28,10 @@
      matInput placeholder="Leave a comment"></textarea>
   </mat-form-field> 
   
- <div >
-  <button  clas="btn-send" mat-mini-fab aria-label (click)="sendSms()">
+ 
+  <button  clas="btn-send"  mat-mini-fab aria-label (click)="sendSms()">
           <mat-icon>send</mat-icon>
   </button>
   
-</div>
 </form>
 

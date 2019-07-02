@@ -1,7 +1,5 @@
 
-<ul>
-  <li *ngFor="let sms of  smsService.sms; let i = index;" >
-    <mat-card   class="example-card" [class.nonedisp]="!sms.dismissed">
+<mat-card *ngFor="let sms of  smsService.sms; let i = index;"  class="example-card" [class.nonedisp]="!sms.dismissed">
         <mat-card-header>
            <mat-card-title> {{sms.firstName}}</mat-card-title>
            <button mat-mini-fab aria-label (click)="Close(sms.id)">
@@ -15,8 +13,7 @@
           </p>
         </mat-card-content>
       </mat-card>
-  </li>
-</ul>
+  
 
       
       

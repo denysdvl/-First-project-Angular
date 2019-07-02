@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core'
-
 export interface Dogs {
     id: number
     title: string
@@ -12,6 +11,11 @@ export interface Sms {
     myText: string
     dismissed: boolean
     id: number
+}
+export interface Login {
+    id: number
+    Name: string
+    Password: string
 }
 
 @Injectable({ providedIn: 'root' })
@@ -42,27 +46,62 @@ export class DogsService {
 }
 @Injectable({ providedIn: 'root' })
 export class SmsService {
-    maxId=100;
+    maxId = 100;
     public sms: Sms[] = [
-        this.createSms("Keanu Reeves", "Lorem Nulla efficitur lacinia laoreet. Nam elit mauris, pellentesque quis laoreet id"),
-        this.createSms("Keanu Reeves", "Lorem Nulla efficitur lacinia laoreet. Nam elit mauris, pellentesque quis laoreet id"),
-        this.createSms("Keanu Reeves", "Lorem Nulla efficitur lacinia laoreet. Nam elit mauris, pellentesque quis laoreet id")
+        this.createSms("Keanu Reeves", "Lorem Nulla efficitur lacinia laoreet. Nam elit mauris, pellentesque quis laoreet id", true),
+        this.createSms("Keanu Reeves", "Lorem Nulla efficitur lacinia laoreet. Nam elit mauris, pellentesque quis laoreet id", true),
+        this.createSms("Keanu Reeves", "Lorem Nulla efficitur lacinia laoreet. Nam elit mauris, pellentesque quis laoreet id", true)
     ]
 
-    createSms(firstName,  myText) {
+    createSms(firstName, myText, dismissed) {
         return ({
             firstName,
             myText,
-            dismissed: true,
+            dismissed,
             id: this.maxId++
         });
-      }
-      sendSms = (name, text) => {
-        const newItem = this.createSms(name, text);
-        this.sms.push(newItem)
-      };
-      onClose(id: number){
-          const idx = this.sms.findIndex(t => t.id === id);
-          this.sms[idx].dismissed = false;
-      }
+    }
+    sendSms = (name, text, myCheck) => {
+        if (myCheck === true) {
+            const newItem = this.createSms(name, text, false);
+            this.sms.push(newItem)
+        } else {
+            const newItem = this.createSms(name, text, true);
+            this.sms.push(newItem)
+        }
+
+    };
+    onClose(id: number) {
+        const idx = this.sms.findIndex(t => t.id === id);
+        this.sms[idx].dismissed = false;
+    }
 }
+
+@Injectable({ providedIn: 'root' })
+export class LoginService {
+
+    MyName: string;
+    MyPass: string;
+    check: boolean = false;
+    public login: Login[] = [
+        {
+            id: 1,
+            Name: "Denys",
+            Password: "iop098"
+        }
+    ]
+
+    CheckLogin(name: string, pass: string) {
+        this.MyName = this.login.find((el) => el.Name === name)["Name"];
+        this.MyPass = this.login.find((el) => el.Name === name)["Password"];
+        if (this.MyName === name && this.MyPass === pass) {
+            this.check = true;
+            console.log(this.MyName);
+        }
+        else {
+            alert("please try again");
+            this.check = false;
+        }
+    };
+}
+
