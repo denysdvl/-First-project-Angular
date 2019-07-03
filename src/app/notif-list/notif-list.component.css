@@ -16,3 +16,8 @@ mat-card-header{
 mat-card-content{
     height: 30px;
 }
+@media screen and (max-width: 500px){
+    .example-card{
+        display: none;
+    }
+}

@@ -1,27 +1,15 @@
 import { Injectable } from '@angular/core'
-export interface Dogs {
+export interface Content {
     id: number
     title: string
     imgurl: string
     content: string
 }
 
-export interface Sms {
-    firstName: string
-    myText: string
-    dismissed: boolean
-    id: number
-}
-export interface Login {
-    id: number
-    Name: string
-    Password: string
-}
-
 @Injectable({ providedIn: 'root' })
 export class DogsService {
 
-    public dogs: Dogs[] = [
+    public dogs: Content[] = [
         {
             id: 1,
             title: "Shiba Inu",
@@ -44,64 +32,64 @@ export class DogsService {
     ]
 
 }
-@Injectable({ providedIn: 'root' })
-export class SmsService {
-    maxId = 100;
-    public sms: Sms[] = [
-        this.createSms("Keanu Reeves", "Lorem Nulla efficitur lacinia laoreet. Nam elit mauris, pellentesque quis laoreet id", true),
-        this.createSms("Keanu Reeves", "Lorem Nulla efficitur lacinia laoreet. Nam elit mauris, pellentesque quis laoreet id", true),
-        this.createSms("Keanu Reeves", "Lorem Nulla efficitur lacinia laoreet. Nam elit mauris, pellentesque quis laoreet id", true)
-    ]
-
-    createSms(firstName, myText, dismissed) {
-        return ({
-            firstName,
-            myText,
-            dismissed,
-            id: this.maxId++
-        });
-    }
-    sendSms = (name, text, myCheck) => {
-        if (myCheck === true) {
-            const newItem = this.createSms(name, text, false);
-            this.sms.push(newItem)
-        } else {
-            const newItem = this.createSms(name, text, true);
-            this.sms.push(newItem)
-        }
-
-    };
-    onClose(id: number) {
-        const idx = this.sms.findIndex(t => t.id === id);
-        this.sms[idx].dismissed = false;
-    }
-}
 
 @Injectable({ providedIn: 'root' })
-export class LoginService {
+export class CatsService {
 
-    MyName: string;
-    MyPass: string;
-    check: boolean = false;
-    public login: Login[] = [
+    public cats: Content[] = [
         {
             id: 1,
-            Name: "Denys",
-            Password: "iop098"
+            title: "Maine Coon",
+            imgurl: "https://cdn.pixabay.com/photo/2017/11/09/21/36/maine-coon-2934708__340.jpg",
+            content: `The Maine Coon is the largest domesticated cat breed. It has a distinctive physical 
+            appearance and valuable hunting skills. It is one of the oldest natural breeds in North America, 
+            specifically native to the state of Maine` },
+        {
+            id: 2,
+            title: "Munchkin",
+            imgurl: "https://image.shutterstock.com/image-photo/munchkin-cat-smile-face-600w-1279534996.jpg",
+            content: `The Munchkin cat or Sausage cat is a newer breed of cat characterized by 
+            its very short legs, which are caused by a genetic mutation. `
+        },
+        {
+            id: 3,
+            title: "Scottish Fold",
+            imgurl: "https://cdn.pixabay.com/photo/2017/02/24/11/11/scottish-2094470_960_720.jpg",
+            content: `The Scottish Fold is a breed of domestic cat with a natural dominant-gene mutation 
+            that affects cartilage throughout the body, causing the ears to "fold", bending forward and down
+             towards the front of the head`
         }
     ]
 
-    CheckLogin(name: string, pass: string) {
-        this.MyName = this.login.find((el) => el.Name === name)["Name"];
-        this.MyPass = this.login.find((el) => el.Name === name)["Password"];
-        if (this.MyName === name && this.MyPass === pass) {
-            this.check = true;
-            console.log(this.MyName);
-        }
-        else {
-            alert("please try again");
-            this.check = false;
-        }
-    };
 }
+@Injectable({ providedIn: 'root' })
+export class TravelService {
+
+    public travel: Content[] = [
+        {
+            id: 1,
+            title: "British Columbia",
+            imgurl: "https://cdn.pixabay.com/photo/2018/11/01/05/33/british-columbia-3787200__340.jpg",
+            content: `British Columbia is the westernmost province of Canada, located between the Pacific Ocean and the Rocky Mountains. 
+            With an estimated population of 5.034 million as of 2019, it is Canada's third-most populous province` },
+        {
+            id: 2,
+            title: "Cuba",
+            imgurl: "https://cdn.pixabay.com/photo/2016/02/13/13/11/cuba-1197800__340.jpg",
+            content: `is a country comprising the island of Cuba as well as Isla de la Juventud and several minor archipelagos. 
+            Cuba is located in the northern Caribbean where the Caribbean Sea, Gulf of Mexico and Atlantic Ocean meet.`
+        },
+        {
+            id: 3,
+            title: "Paris",
+            imgurl: "https://cdn.pixabay.com/photo/2015/07/13/14/40/paris-843229__340.jpg",
+            content: ` is the capital and most populous city of France, with an area of 105 square kilometres (41 square miles)
+             and an official estimated population of 2,140,526 residents as of 1 January 2019.`
+        }
+    ]
+
+}
+
+
+
 

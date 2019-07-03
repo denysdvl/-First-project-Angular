@@ -13,6 +13,9 @@ import {FormsModule} from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import { from } from 'rxjs';
+import { LogoutComponent } from './logout/logout.component';
+import { TabCatsComponent } from './tab-cats/tab-cats.component';
+import { TabTravelComponent } from './tab-travel/tab-travel.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +24,10 @@ import { from } from 'rxjs';
     TabDogsComponent,
     ChatComponent,
     NotifListComponent,
-    LoginComponent
+    LoginComponent,
+    LogoutComponent,
+    TabCatsComponent,
+    TabTravelComponent
   ],
   imports: [
     BrowserModule,

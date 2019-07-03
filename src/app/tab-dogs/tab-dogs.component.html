@@ -4,18 +4,17 @@
           <mat-card-title>{{dogs.title}}</mat-card-title>
           <mat-card-subtitle>Dog Breed</mat-card-subtitle>
         </mat-card-header>
-       <div class="img"> 
-           <img mat-card-image src={{dogs.imgurl}} alt="Photo of a Dogs">
+       <div > 
+           <img class="img" mat-card-image src={{dogs.imgurl}} alt="Photo of a Dogs">
         </div>
-        <mat-card-content>
+        <mat-card-content class="content">
           <p>
             {{dogs.content}}
           </p>
         </mat-card-content>
         <mat-card-actions>
           <button mat-button>LIKE</button>
-          <button mat-button>SHARE</button>
+          <button mat-button click="onShare(dogs.id)">SHARE</button>
         </mat-card-actions> 
     </mat-card>     
             </div>
-          

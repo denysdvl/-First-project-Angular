@@ -1,10 +1,12 @@
-import { Component } from '@angular/core';
-import { SmsService, LoginService } from "../shared/content.service"
+import { Component, Injectable} from '@angular/core';
+import { SmsService } from "../shared/sms.service"
+import { LoginService } from "../shared/login.service"
 @Component({
   selector: 'app-chat',
   templateUrl: './chat.component.html',
   styleUrls: ['./chat.component.css']
 })
+@Injectable({ providedIn: 'root' })
 export class ChatComponent {
 
   firstName: string;
@@ -31,11 +33,15 @@ export class ChatComponent {
 
   openDialog() {
     this.OpenChat = true;
-    if (typeof (this.loginService.MyName) === "string") {
+    if (this.loginService.check === true) {
       this.firstName = this.loginService.MyName;
       this.onLog = this.loginService.check
+    }else{
+      this.firstName = "";
+      this.onLog = false;
     }
   }
+
   onNoClick() {
     this.OpenChat = false;
   }

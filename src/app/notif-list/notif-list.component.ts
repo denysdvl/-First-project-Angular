@@ -1,5 +1,5 @@
 import { Component, Injectable } from '@angular/core';
-import { SmsService } from "../shared/content.service"
+import { SmsService } from "../shared/sms.service"
 
 @Component({
   selector: 'app-notif-list',

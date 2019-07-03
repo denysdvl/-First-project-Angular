@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { LoginService } from "../shared/login.service"
+import { from } from 'rxjs';
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
@@ -8,9 +9,11 @@ import { Component, OnInit } from '@angular/core';
 export class MenuComponent implements OnInit {
   current: number;
   openLogin: boolean;
-  constructor() {
+  chekLog: boolean;
+  constructor(private loginService: LoginService) {
     this.current = 1;
     this.openLogin = false;
+    this.chekLog = true;
   }
 
   ngOnInit() {
@@ -21,7 +24,14 @@ export class MenuComponent implements OnInit {
   OpenChat() {
     this.current = 2;
   }
-  OpenLogin() {
-    this.openLogin = true;
+  OpenLogin() {;
+    if(this.loginService.check == true){
+      this.chekLog = false
+       this.openLogin = !this.openLogin;
+    }else{
+      this.chekLog = true;
+      this.openLogin = !this.openLogin;
+    }
+   
   }
 }

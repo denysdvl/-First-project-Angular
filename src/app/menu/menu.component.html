@@ -3,15 +3,19 @@
         <mat-menu #menu="matMenu">
           <button mat-menu-item class="menu-item" (click)="OpenHome()">Home</button>
           <button mat-menu-item class="menu-item" (click)="OpenChat()">Chat</button>
-          <button mat-menu-item class="menu-item" (click)="OpenLogin()">Login</button>
+          <button mat-menu-item class="menu-item" (click)="OpenLogin()"><span>login</span></button>
         </mat-menu>
         <div class="left_menu">
                 <button mat-button  (click)="OpenHome()">Home</button>
                 <button mat-button (click)="OpenChat()">Chat</button>
-                <button mat-button (click)="OpenLogin()">Login</button>
+                <button mat-button (click)="OpenLogin()">
+                        <span *ngIf="chekLog; else elseLogout">login</span>
+                        <ng-template #elseLogout><span>logout</span></ng-template>
+                </button>
         </div>
 </mat-toolbar>
-<app-login [class.dispnone]="!openLogin" ></app-login>
+<app-login *ngIf="chekLog; else elseBlock" [class.dispnone]="!openLogin" ></app-login>
+<ng-template #elseBlock><app-logout [class.dispnone]="!openLogin"></app-logout></ng-template>
 <div  [ngSwitch]="current">
         <app-kontent *ngSwitchCase="1"></app-kontent>
         <app-chat *ngSwitchCase="2"></app-chat>
