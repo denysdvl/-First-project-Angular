@@ -8,9 +8,10 @@
           </mat-card-header>
         <hr color="#c2185b">
         <mat-card-content>
-          <p>
-                {{sms.myText}}
-          </p>
+            <p *ngIf="!sms.onShare; else elseBlock">{{sms.myText}}</p>
+            <ng-template #elseBlock>
+                <button class="btn-go" mat-button>LIKE</button>
+            </ng-template>
         </mat-card-content>
       </mat-card>
   

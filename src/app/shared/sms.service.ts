@@ -5,6 +5,14 @@ export interface Sms {
     myText: string
     dismissed: boolean
     id: number
+    share: object
+    onShare: boolean
+}
+export interface Share {
+    id: number
+    title: string
+    imgurl: string
+    content: string
 }
 
 @Injectable({ providedIn: 'root' })
@@ -21,7 +29,20 @@ export class SmsService {
             firstName,
             myText,
             dismissed,
-            id: this.maxId++
+            id: this.maxId++,
+            share: [],
+            onShare: false
+        });
+    }
+
+    shareSms(firstName, dismissed, share) {
+        return ({
+            firstName,
+            myText: "",
+            dismissed,
+            id: this.maxId++,
+            share: share,
+            onShare: true
         });
     }
     sendSms = (name, text, myCheck) => {
@@ -34,6 +55,16 @@ export class SmsService {
         }
 
     };
+
+    onShareSms = (name, myCheck, share) => {
+        if (myCheck === true) {
+            const newItem = this.shareSms(name, false, share);
+            this.sms.push(newItem)
+        } else {
+            const newItem = this.shareSms(name, true, share);
+            this.sms.push(newItem)
+        }
+    }
     onClose(id: number) {
         const idx = this.sms.findIndex(t => t.id === id);
         this.sms[idx].dismissed = false;

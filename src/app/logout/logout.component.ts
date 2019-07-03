@@ -17,6 +17,7 @@ export class LogoutComponent  {
   }
   Logout(){
 this.loginService.onLogout();
-this.menuComponent.openLogin = false
+this.menuComponent.openLogin = false;
+this.menuComponent.chekLog = true;
   }
 }

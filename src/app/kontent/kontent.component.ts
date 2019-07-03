@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { LoginService} from "../shared/login.service"
+import { from } from 'rxjs';
 @Component({
   selector: 'app-kontent',
   templateUrl: './kontent.component.html',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class KontentComponent implements OnInit {
 
-  constructor() { }
+  constructor(private loginService: LoginService) { }
 
   ngOnInit() {
   }
+  checkLog(){
 
+  }
 }

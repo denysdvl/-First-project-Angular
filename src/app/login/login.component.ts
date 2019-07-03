@@ -10,19 +10,28 @@ import { from } from 'rxjs';
 export class LoginComponent {
   Name: string;
   Pass: string;
+  nonn: boolean;
 
   constructor(private loginService: LoginService, private menuComponent: MenuComponent) {
     this.Name = "";
     this.Pass = "";
+    this.nonn = false
   }
   Login() {
     this.loginService.CheckLogin(this.Name, this.Pass);
     this.Name = "";
     this.Pass = "";
-    if(this.loginService.check === true){this.menuComponent.openLogin = false}
+    if(this.loginService.check === true){
+      this.menuComponent.openLogin = false; 
+      this.menuComponent.chekLog = false}
     
   }
   onClose() {
     this.menuComponent.openLogin = false
   }
 }
+
+
+
+
+ 

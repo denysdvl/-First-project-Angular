@@ -3,7 +3,7 @@
 }
 .example-card {
    margin: 20px;
-   width: calc(33.33% - 40px)
+   width: calc(33.33% - 40px);
   }
   mat-card-header{
       padding-bottom: 10px; 

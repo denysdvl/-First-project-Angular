@@ -21,3 +21,6 @@ mat-card-content{
         display: none;
     }
 }
+.btn-go {
+  width: 350px;
+   }

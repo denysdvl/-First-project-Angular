@@ -24,14 +24,7 @@ export class MenuComponent implements OnInit {
   OpenChat() {
     this.current = 2;
   }
-  OpenLogin() {;
-    if(this.loginService.check == true){
-      this.chekLog = false
-       this.openLogin = !this.openLogin;
-    }else{
-      this.chekLog = true;
+  OpenLogin() {
       this.openLogin = !this.openLogin;
     }
-   
-  }
 }

@@ -4,8 +4,8 @@
       <mat-form-field  floatLabel="auto" 
       hideRequiredMarker appearance="outline">
       <mat-label>First name</mat-label>
-        <input matInput required
-        [(ngModel)]="Name" type="text" name="name">
+        <input  matInput required [class.cdk-text-field-autofilled]="nonn"
+        [(ngModel)]="Name" type="text" name="name" class="in-name">
       </mat-form-field>
     </div>
     

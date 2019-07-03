@@ -5,9 +5,24 @@
             </mat-card-header>
           <hr color="#c2185b">
           <mat-card-content>
-            <p>
-                  {{sms.myText}}
-            </p>
+            <p *ngIf="!sms.onShare; else elseBlock">{{sms.myText}}</p>
+            <ng-template #elseBlock>
+                <p>{{sms.myText}}</p>
+                <mat-card   class="example-share">
+                    <mat-card-header>
+                      <mat-card-title>{{sms.share.title}}</mat-card-title>
+                      <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+                    </mat-card-header>
+                   <div > 
+                       <img class="img" mat-card-image src={{sms.share.imgurl}} alt="Photo of a Dogs">
+                    </div>
+                    <mat-card-content class="content">
+                      <p>
+                        {{sms.share.content}}
+                      </p>
+                    </mat-card-content> 
+                </mat-card>  
+            </ng-template>
           </mat-card-content>
         </mat-card>
     

@@ -13,11 +13,13 @@ export class ChatComponent {
   myText: string = "";
   OpenChat: boolean;
   onLog: boolean;
+  onShare: boolean;
 
   constructor(private smsService: SmsService, private loginService: LoginService) {
     this.OpenChat = false;
     this.onLog = false;
     this.firstName = "";
+    this.onShare = false
   }
 
   sendSms() {
@@ -32,7 +34,7 @@ export class ChatComponent {
   }
 
   openDialog() {
-    this.OpenChat = true;
+    this.OpenChat = !this.OpenChat;
     if (this.loginService.check === true) {
       this.firstName = this.loginService.MyName;
       this.onLog = this.loginService.check
@@ -43,6 +45,6 @@ export class ChatComponent {
   }
 
   onNoClick() {
-    this.OpenChat = false;
+    this.OpenChat = !this.OpenChat;
   }
 }

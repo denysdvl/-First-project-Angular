@@ -18,9 +18,10 @@
   width: 100%;
   margin-bottom: 20px;
   padding-top: 1rem;
-
 }
-
+.in-name{
+  color: white;
+}
 mat-form-field {
   display: block;
   height: 90px;
